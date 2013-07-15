@@ -44,7 +44,7 @@ Nas mensagens dos seus commits vamos seguir algus padrões como:
 
 Para mais de um arquivo:
 
-	git commit -m "Translate: filename.jade, filename2.jade and filename3.jade"
+    git commit -m "Translate: filename.jade, filename2.jade and filename3.jade"
 
 Atenção: Para mais de um arquivo sempre o último tem o `and` e o restanto do começo separado por vírgula com espaços entre as vírgulas como no exemplo.
 
@@ -52,9 +52,9 @@ Atenção: Para mais de um arquivo sempre o último tem o `and` e o restanto do 
 
 Caso você tenha errado alguma coisa no arquivo ou não saiu como planejado depois de testar e ler no GitHub. Você pode corrigir o arquivo e fazer um novo commit seguindo o exemplo:
 
-	git commit -m "FixError: filename.jade"
+    git commit -m "FixError: filename.jade"
 
-	git commit -m "FixError: filename.jade, filename2.jade and filename3.jade"
+    git commit -m "FixError: filename.jade, filename2.jade and filename3.jade"
 
 O mesmo segue as regras de cima só que mudando a palavra para `FixError`.
 
