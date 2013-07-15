@@ -11,11 +11,11 @@ A Tradução da Documentação está em andamento e você poderar ver como está
 
 Traduzidos:
 
-    * 
+    *
 
 Em Processo:
 
-    * 
+    * faq.jade
 
 ### Como Contribuir
 
@@ -57,6 +57,23 @@ Caso você tenha errado alguma coisa no arquivo ou não saiu como planejado depo
 	git commit -m "FixError: filename.jade, filename2.jade and filename3.jade"
 
 O mesmo segue as regras de cima só que mudando a palavra para `FixError`.
+
+### Testar Tradução
+
+Para Testar a tradução e ver como está ficando você vai precisar ter o `jade` e o `serve` instalado , caso não tenha instale:
+
+    > sudo npm install -g jade
+    > sudo npm install -g serve
+
+Depois de instalado você pode converter seus arquivos .jade em .html com o seguinte comando:
+
+    > jade {guide,api,faq}.jade
+
+Se tudo deu certo, foram criados 3 arquivos.html: guide.html, api.html e faq.html. Para testar no navegador vamos usar o `serve`. Estando dentro da pasta onde estão os 3 arquivos.html execute o seguinte comando.
+
+    > serve . &
+
+O servidor estará online em http://localhost:3000
 
 
 ### Enviando Pull Request
