@@ -1,19 +1,19 @@
 section
-  h3(id='executable') Using express(1) to generate an app
+  h3(id='executable') Usando express(1) para gerar um app
 
   p.
-    Express is bundled with an executable, aptly named <code>express(1)</code>.
-    If you install express globally with npm you'll have it available from anywhere
-    on your machine:
+    Express é fornecido com um arquivo executável, apropriadamente chamado <code>express(1)</code>.
+    Se você instalar o Express globalmente com npm você vai tê-lo disponível a partir de qualquer lugar
+    em sua máquina:
 
   +js.
     $ npm install -g express
 
   p.
-    This tool provides a simple way to get an application skeleton going,
-    but has limited scope, for example it supports only a few template engines,
-    whereas Express itself supports virtually any template engine built for node.
-    Be sure to check out the <code>--help</code>:
+    Esta ferramenta fornece uma maneira simples para obter um esqueleto de aplicação,
+    mas tem um âmbito limitado, por exemplo ele suporta apenas alguns motores de modelo,
+    ao passo que em si Express suporta virtualmente qualquer motor de template construído para node.
+    Seja certeza de fazer dar uma olhada no arquivo <code>--help</code>:
 
   +js.
   
@@ -30,8 +30,8 @@ section
       -c, --css <engine>  add stylesheet <engine> support (less|stylus) (defaults to plain css)
       -f, --force         force on non-empty directory
   p.
-    If you want to generate an application with EJS, Stylus, and session
-    support you would simply execute:
+    Se você deseja gerar uma aplicação com EJS, Stylus, e suporte a sessão,
+    você poderia simplesmente executar:
 
   +js.
     $ express --sessions --css stylus --ejs myapp
@@ -49,28 +49,28 @@ section
     create : myapp/views
     create : myapp/views/index.ejs
 
-    install dependencies:
+    instalar dependências:
       $ cd myapp && npm install
 
-    run the app:
+    executar o app:
       $ node app  
 
   p.
-    Like any other node application, you must then install the dependencies:
+    Como qualquer outro aplicativo de node, você deve instalar as dependências:
 
   +js.
     $ cd myapp
     $ npm install
 
   p.
-   Then fire it up!
+   Agora só começar a executar o app.
 
   +js.
     $ node app
 
   p.
-    That's all you need to get a simple application up and running. Keep in mind
-    that Express is not bound to any specific directory structure, these are simply
-    a baseline for you to work from. For application structure alternatives be
-    sure to view the <a href="https://github.com/visionmedia/express/tree/master/examples">examples</a>
-    found in the github repo.
+    Isso é tudo que você precisa para obter um simples aplicativo instalado e funcionando. Ter em mente
+    que o Express não está vinculado a qualquer estrutura de diretório específico, estes são simplesmente
+    uma linha de base para você trabalhar. Para alternativas de estrutura da aplicação
+    Certifique-se de ver o <a href="https://github.com/visionmedia/express/tree/master/examples"> exemplos </a>
+    encontrado no github.

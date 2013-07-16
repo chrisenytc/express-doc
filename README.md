@@ -11,12 +11,13 @@ A Tradução da Documentação está em andamento e você poderar ver como está
 
 Traduzidos:
 
-    * faq.jade
-    * error-handling.jade
+    * pt_br/faq.jade
+    * pt_br/guide/error-handling.jade
+    * pt_br/guide/executable.jade
 
 Em Processo:
 
-    * executable.jade
+    * pt_br/guide/intro.jade
 
 ### Como Contribuir
 
