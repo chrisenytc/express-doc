@@ -1,42 +1,41 @@
 
 section
-  h3(id='models') How do I define models?
+  h3(id='models') Como faço para definir modelos?
 
   p.
-    Express has no notion of a database at all, this is
-    left up to third-party node modules - allowing you to
-    interface with nearly any database.
+    Express tem nenhuma noção de banco de dados ao todo, isto foi deixado
+    aos módulos de terceiros do - o que lhe permite
+    ter uma interface com praticamente qualquer banco de dados.
 
 section
-  h3(id='auth') How can I authenticate users?
+  h3(id='auth') Como posso autenticar os usuários?
   
   p.
-    This is another opinionated area that Express does not
-    venture into, you may use any authentication scheme you wish.
-    For a simple username / password scheme view this <a href="https://github.com/visionmedia/express/tree/master/examples/auth">example</a>.
+    Esta é outra área que Express não
+    aventura-se, você pode usar qualquer esquema de autenticação que você desejar.
+    Para um esquema de nome de usuário/senha simples visualizar este <a href="https://github.com/visionmedia/express/tree/master/examples/auth">example</a>.
 
 section
-  h3(id='templates') Which template engines does Express support?
+  h3(id='templates') Qual Template Engine o Express suporta?
 
   p.
-    Anything that can conform with the <code>(path, locals, callback)</code> signature.
-    To normalize template engine interfaces and caching it's recommended to
-    check the <a href="https://github.com/visionmedia/consolidate.js">consolidate.js</a>
-    project for support. Unlisted template engines may still support the Express
-    signature.
+    Tudo o que pode se conformar com o <code>(caminho, locals, callback)</code>.
+    Para normalizar a interface do mecanismo de modelo e cache é recomendado
+    verificar o <a href="https://github.com/visionmedia/consolidate.js">consolidate.js</a>. 
+    Motores de modelos não listados ainda pode apoiar o Express.
 
 section
-  h3(id='structure') How should I structure my application?
+  h3(id='structure') Como devo estruturar minha aplicação?
 
   p.
-    There is no true answer to this question, it is highly dependant
-    on the scale of your application and the team involved. To be as
-    flexible as possible Express makes no assumptions in terms of structure.
+    Não há verdadeira resposta a esta pergunta, é altamente dependente
+    da escala de sua aplicação e da equipe envolvida. Para ser tão
+    flexível possível o Express não faz suposições em termos de estrutura.
 
   p.
-    Routes and other application-specific logic may live in as many files
-    as you wish, in any directory structure you prefer. View the following
-    examples for inspiration:
+    Rotas e outra lógica específica do aplicativo pode viver em tantos arquivos
+    como quiser, em qualquer estrutura de diretórios que você preferir. Ver os seguintes
+    exemplos para inspiração:
 
   ul
     li: a(href='https://github.com/visionmedia/express/blob/master/examples/route-separation/index.js#L19') Route listings
@@ -45,61 +44,61 @@ section
     li: a(href='https://github.com/visionmedia/express/tree/master/examples/mvc') MVC style controllers
 
   p.
-    Available as well are third-party extensions to Express to simplify some of these patterns:
+    Também está disponível as extensões de terceiros para o Express simplificar alguns desses padrões:
 
   ul
     li: a(href='https://github.com/visionmedia/express-resource') Resourceful routing
     li: a(href='https://github.com/visionmedia/express-namespace') Namespaced routing
 
 section
-  h3(id='multiple-statics') How can I serve statics from several directories?
+  h3(id='multiple-statics') Como posso servir páginas estáticas de vários diretórios?
 
   p.
-    You may typically use any middleware several times 
-    within your application. With the following middleware setup and a request
-    to "GET /javascripts/jquery.js" would first check "./public/javascripts/jquery.js",
-    if it does not exist then the subsequent middleware will check "./files/javascripts/jquery.js".
+    Você pode normalmente usar qualquer middleware várias vezes
+    dentro de sua aplicação. Com a seguinte configuração middleware e um pedido
+    a "GET /javascripts/jquery.js" iria verificar primeiro "./public/javascripts/jquery.js",
+    se ele não existe, então o middleware subseqüente irá verificar "./files/javascripts/jquery.js".
 
   +js.
     app.use(express.static('public'));
     app.use(express.static('files'));
 
 setup
-  h3(id='static-prefix') How can I prefix a pathname for serving statics?
+  h3(id='static-prefix') Como posso colocar um prefixo no caminho para servir estáticamente?
   
   p.
-    Connect's generic "mounting" feature allows you to define
-    the pathname "prefix" to which the middleware will be invoked,
-    effectively behaving as if that prefix string was never
-    part of the path. Suppose if you wanted "GET /files/javascripts/jquery.js",
-    you could mount the middleware at "/files", exposing "/javascripts/jquery.js"
-    as the <code>req.url</code> allowing the middleware to serve the file:
+    O recurso genérico de "montagem" do Connect permite definir
+    o "prefixo" do caminho para o qual o middleware será invocado,
+    efetivamente se comportando como se essa string com o prefixo nunca foi
+    parte do caminho. Suponha que se você quisesse "GET /files/javascripts/jquery.js",
+    você pode montar o middleware em "/files", expondo "/javascripts/jquery.js"
+    como o <code>req.url</code> permitindo que o middleware possa servir o arquivo:
 
   +js.
     app.use('/public', express.static('public'));
 
 setup
-  h3(id='migration') How do I migrate my Express 2.x application?
+  h3(id='migration') Como faço para migrar minha aplicação Express 2.x?
 
   p.
-    Express 2x will likely be supported through to node 1.0 so there's
-    no immediate reason to update beyond the refactoring and API changes
-    that Express 3x introduces, so if you're happy with 2x feel free
-    to remain on that branch. For migration information visit the
-    <a href="https://github.com/visionmedia/express/wiki/Migrating-from-2.x-to-3.x">migration</a>
-    wiki page, or view a <a href="https://github.com/visionmedia/express/wiki/New-features-in-3.x">list of changes</a> made in 3.x.
+    O Express 2.x provavelmente será apoiado através do node de 1.0 por isso há
+    nenhuma razão imediata para atualizar além das refatorações e mudanças na API
+    que o Express 3.x introduz, por isso, se você está feliz com 2.x sinta-se livre para
+    permanecer nesse ramo. Para mais informações visite a página wiki da migração
+    <a href="https://github.com/visionmedia/express/wiki/Migrating-from-2.x-to-3.x"> Migração </a>, 
+    ou ver uma lista <a href="https://github.com/visionmedia/express/wiki/New-features-in-3.x"> Lista de mudanças </a> feitas na 3.x.
 
 setup
-  h3(id='404-handling') How do you handle 404s?
+  h3(id='404-handling') Como você lida com 404s?
 
   p.
-    In Express 404s are not the result of an error, thus the
-    error-handler middleware will not capture 404s, this is
-    because a 404 is simply the absence of additional work to do,
-    in other words Express has executed all middleware / routes
-    and found that none of them responded. All you need to
-    do is add a middleware at the very bottom below all the others
-    to handle a 404:
+    Express 404s não são o resultado de um erro, portanto, a
+    middleware de erro do manipulador não irá capturar 404s, isso é
+    porque a 404 é simplesmente a ausência de trabalho adicional a fazer,
+    em outras palavras, Express executou todos os middleware / rotas
+    e descobriu que nenhum deles respondeu. Tudo que você precisa
+    fazer é adicionar um middleware na parte inferior abaixo de todos os outros
+    para lidar com uma 404:
 
   +js.
     app.use(function(req, res, next){
@@ -107,11 +106,11 @@ setup
     });
 
 setup
-  h3(id='error-handling') How do you setup an error handler in Express?
+  h3(id='error-handling') Como você configurar um manipulador de erro no Express?
 
   p.
-    Error-handling middleware are defined just like regular middleware,
-    however must be define with an arity of 4, that is the signature
+    O middleware de tratamento de erros são definidos como middleware regular,
+    No entanto deve ser definir com uma aridade de 4, que é a assinatura
     <code>(err, req, res, next)</code>:
 
   +js.
@@ -121,23 +120,23 @@ setup
     });
 
   p.
-    View <a href="/guide.html#error-handling">error-handling</a> for more information.
+    Veja <a href="/guide.html#error-handling">error-handling</a> para mais informações.
 
 setup
-  h3(id='render-html') How do I render plain HTML?
+  h3(id='render-html') Como faço para renderizar um HTML simples?
   
   p.
-    You don't! There's no need to "render" HTML with <code>res.render()</code>,
-    if you have a specific file you should use <code>res.sendfile()</code>, or
-    if you are serving many assets from a directory use the <code>express.static()</code>
-    middleware.
+    Você não tem a necessidade de se usar "render" com <code>res.render()</code>,
+    se você tem um arquivo específico que você deve usar <code>res.sendfile()</code>, ou
+    se você está servindo muitos ativos a partir de um diretório use o middleware <code>express.static()</code>
 
 setup
-  h3(id='size') How big is the Express codebase?
+  h3(id='size') Quão grande é a base de código do Express?
 
   p.
-    Express is a very small framework, the 3.0.0 release is only
-    932 SLOC, and the mandatory portion of Connect which Express
-    is built on is only 267 SLOC. The optional middleware bundled
-    with Connect add an additional 1143 SLOC, and are lazy loaded
-    upon use.
+    Express é um framework muito pequeno, a versão 3.0.0 é apenas
+    932 SLOC, e a porção obrigatória de Ligação que Express
+    é construído em apenas 267 SLOC. O pacote middleware opcional
+    Connect adiciona um adicional de 1.143 SLOC, e são lazy loaded
+    quando estão em utilização.
+

@@ -11,11 +11,11 @@ A Tradução da Documentação está em andamento e você poderar ver como está
 
 Traduzidos:
 
-    *
+    * faq.jade
 
 Em Processo:
 
-    * faq.jade
+    * error-handling.jade
 
 ### Como Contribuir
 
