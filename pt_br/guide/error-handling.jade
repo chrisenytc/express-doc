@@ -1,9 +1,9 @@
 section
-  h3(id='error-handling') Error handling
+  h3(id='error-handling') Tratamento de Erros
 
   p.
-    Error-handling middleware are defined just like regular middleware,
-    however must be defined with an arity of 4, that is the signature
+    O middleware de tratamento de erros são definidos como middleware regular,
+    no entanto deve ser definida com um ariridade de 4, que é a assinatura
     <code>(err, req, res, next)</code>:
 
   +js.
@@ -13,8 +13,8 @@ section
     });
 
   p.
-    Though not mandatory error-handling middleware are typically defined
-    very last, below any other <code>app.use()</code> calls as shown here:
+    Apesar de não ser obrigatório o middleware de tratamento de erros são normalmente definidos por
+    último, abaixo de qualquer outro <code>app.use()</code> chamados como mostrado aqui:
 
   +js.
     app.use(express.bodyParser());
@@ -25,15 +25,15 @@ section
     });
 
   p.
-    Responses from within these middleware are completely arbitrary. You may
-    wish to respond with an HTML error page, a simple message, a JSON string,
-    or anything else you prefer.
+    Respostas de dentro destes middleware são completamente arbitrárias. você pode
+    gostar de responder com uma página de erro HTML, uma mensagem simples, uma string JSON,
+    ou qualquer outra coisa que você preferir.
 
   p.
-    For organizational, and higher-level framework purposes you may define
-    several of these error-handling middleware, much like you would with
-    regular middleware. For example suppose you wanted to define an error-handler
-    for requests made via XHR, and those without, you might do:
+    Para fins de enquadramento organizacional e de alto nível que você pode definir
+    vários destes middleware de tratamento de erros, assim como você faria com o
+    middleware regular. Por exemplo, suponha que você queira definir um manipulador de erro
+    para solicitações feitas via XHR, e aquelas sem, você pode fazer:
 
   +js.
     app.use(express.bodyParser());
@@ -44,8 +44,8 @@ section
     app.use(errorHandler);
 
   p.
-    Where the more generic <code>logErrors</code> may write request and
-    error information to stderr, loggly, or similar services:
+    Onde as mais genéricas <code>logErrors</code> podem escrever o pedido e
+    informações de erro para stderr, loggly ou afins:
 
   +js.
     function logErrors(err, req, res, next) {
@@ -54,8 +54,8 @@ section
     }
 
   p.
-    Where <code>clientErrorHandler</code> is defined as the following, note
-    that the error is explicitly passed along to the next.
+    Onde <code>clientErrorHandler</code> é definido como o seguinte, veja
+    que o erro é passado explicitamente ao longo do próximo.
 
   +js.
     function clientErrorHandler(err, req, res, next) {
@@ -67,7 +67,7 @@ section
     }
 
   p.
-    The following <code>errorHandler</code> "catch-all" implementation may be defined as:
+    A seguir <code>errorHandler</code> a implementação "catch-all" pode ser definida como:
 
   +js.
     function errorHandler(err, req, res, next) {
